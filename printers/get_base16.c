@@ -6,49 +6,17 @@
 /*   By: jbadaire <jbadaire@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/07 18:10:35 by jbadaire          #+#    #+#             */
-/*   Updated: 2023/09/07 18:10:35 by jbadaire         ###   ########.fr       */
+/*   Updated: 2023/09/08 14:18:00 by jbadaire         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../headers/printf.h"
-#include "stdlib.h"
+#include "../headers/ft_printf.h"
 
-
-void	ft_get_base16(int is_upper, va_list param)
+void	ft_get_base16(int is_upper, va_list param, char *base)
 {
-    unsigned int number;
-    unsigned int second_number;
-    int index;
-    char *result;
-    char *base_array;
+	long unsigned int	number;
 
-    number = va_arg(param, unsigned int);
-    second_number = number;
-    index = 0;
-    result = NULL;
-    base_array = (char [16]) {
-            '0', '1', '2', '3', '4', '5', '6', '7', '8', '9','A', 'B', 'C', 'D', 'E', 'F'
-    };
-    if(number == 0) {
-        ft_putchar_fd('0', 1);
-        return;
-    }
-
-    while ((second_number /= 16) != 0)
-        index++;
-
-    result = (char *) malloc(sizeof (char) * (index + 1));
-    if(!result)
-        return ;
-
-    result[index] ='\0';
-    while(number != 0)
-    {
-        if(!is_upper)
-           result[index--] = (char) ft_tolower(base_array[number % 16]);
-        else
-            result[index--] = base_array[number % 16];
-        number /= 16;
-    }
-    ft_putstr_fd(result, 1);
+	number = va_arg(param, long unsigned int);
+    ft_base(number, 16, base, is_upper);
 }
+

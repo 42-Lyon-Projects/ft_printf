@@ -19,7 +19,7 @@ void	ft_putstr_fd(char *s, int fd)
 	if (!s)
 		return ;
 	index = 0;
-	while (s[index] != '\0')
+	while (s[index] && s[index] != '\0')
 	{
 		ft_putchar_fd(s[index], fd);
 		index++;
