@@ -6,7 +6,7 @@
 /*   By: jbadaire <jbadaire@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/07 11:43:12 by jbadaire          #+#    #+#             */
-/*   Updated: 2023/09/07 18:14:57 by jbadaire         ###   ########.fr       */
+/*   Updated: 2023/09/08 11:45:55 by jbadaire         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,15 +22,12 @@
 #include "../libft/libft.h"
 
 int         ft_printf(const char *str, ...);
-void	    get_char(va_list param);
-void	    get_string(va_list param);
-void        get_integer(va_list param);
-void        get_unsigned_integer(va_list param);
-void        get_adress(va_list param);
-
-void		get_base16(int is_upper, va_list param);
-
-int  handler(char c, va_list params);
-
+void	    ft_get_char(va_list param);
+void	ft_get_string(va_list param);
+void        ft_get_integer(va_list param);
+void        ft_get_unsigned_integer(va_list param);
+void	    ft_get_address(va_list param);
+void		ft_get_base16(int is_upper, va_list param);
+int ft_args_handler (char c, va_list params);
 
 #endif //FT_PRINTF_PRINTF_H

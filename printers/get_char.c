@@ -12,7 +12,7 @@
 
 #include "../headers/printf.h"
 
-void	get_char(va_list param)
+void	ft_get_char(va_list param)
 {
 	char c;
 

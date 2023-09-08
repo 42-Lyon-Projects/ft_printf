@@ -13,20 +13,22 @@
 #include "../headers/printf.h"
 #include "stdlib.h"
 
-char base_16_array[16] = {'0', '1', '2', '3', '4', '5', '6', '7', '8', '9','A', 'B', 'C', 'D', 'E', 'F'};
 
-void	get_base16(int is_upper, va_list param)
+void	ft_get_base16(int is_upper, va_list param)
 {
     unsigned int number;
     unsigned int second_number;
     int index;
     char *result;
+    char *base_array;
 
     number = va_arg(param, unsigned int);
     second_number = number;
     index = 0;
     result = NULL;
-
+    base_array = (char [16]) {
+            '0', '1', '2', '3', '4', '5', '6', '7', '8', '9','A', 'B', 'C', 'D', 'E', 'F'
+    };
     if(number == 0) {
         ft_putchar_fd('0', 1);
         return;
@@ -43,9 +45,9 @@ void	get_base16(int is_upper, va_list param)
     while(number != 0)
     {
         if(!is_upper)
-           result[index--] = (char) ft_tolower(base_16_array[number % 16]);
+           result[index--] = (char) ft_tolower(base_array[number % 16]);
         else
-            result[index--] = base_16_array[number % 16];
+            result[index--] = base_array[number % 16];
         number /= 16;
     }
     ft_putstr_fd(result, 1);

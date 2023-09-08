@@ -22,7 +22,7 @@ int ft_printf(const char *str, ...)
 	while (str[index])
 	{
 		if (str[index] == '%')
-			handler(str[index + 1], params);
+            ft_args_handler(str[index + 1], params);
 		else if(str[index - 1] != '%')
 			ft_putchar_fd(str[index], 1);
 		index++;

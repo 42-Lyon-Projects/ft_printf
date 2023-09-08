@@ -12,19 +12,19 @@
 
 #include "headers/printf.h"
 
- int handler(char c, va_list params) {
+ int ft_args_handler(char c, va_list params) {
 	if (c == 'c')
-		get_char(params);
+		ft_get_char(params);
 	else if (c == 's')
-        get_string(params);
+        ft_get_string(params);
     else if (c == 'u')
-        get_unsigned_integer(params);
+        ft_get_unsigned_integer(params);
 	else if (c == 'd' || c == 'i')
-        get_integer(params);
+        ft_get_integer(params);
 	else if (c == 'x' || c == 'X')
-		get_base16(c == 'X', params);
+		ft_get_base16(c == 'X', params);
     else if (c == 'p')
-        get_adress(params);
+        ft_get_address(params);
 	else if (c == '%')
 		ft_putstr_fd("%", 1);
     else
