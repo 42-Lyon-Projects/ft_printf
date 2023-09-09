@@ -1,32 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strmapi.c                                       :+:      :+:    :+:   */
+/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jbadaire <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/17 17:49:43 by jbadaire          #+#    #+#             */
-/*   Updated: 2023/01/17 17:49:46 by jbadaire         ###   ########lyon.fr   */
+/*   Created: 2022/11/24 14:30:32 by jbadaire          #+#    #+#             */
+/*   Updated: 2023/09/09 16:18:04 by jbadaire         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-#include <stdlib.h>
+#include "../headers/ft_printf.h"
 
-char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
+int	ft_putstr_fd(char *s, int fd)
 {
-	unsigned int		index;
-	char				*mlc;
+	int	index;
 
+	if (!s)
+		return 0;
 	index = 0;
-	mlc = malloc(sizeof(char) * ft_strlen(s) + 1);
-	if (!mlc)
-		return (NULL);
-	while (s[index])
+	while (s[index] && s[index] != '\0')
 	{
-		mlc[index] = f(index, s[index]);
+		ft_putchar_fd(s[index], fd);
 		index++;
 	}
-	mlc[index] = '\0';
-	return (mlc);
+    return (index);
 }

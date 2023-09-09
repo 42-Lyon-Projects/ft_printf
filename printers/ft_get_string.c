@@ -1,20 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstdelone.c                                     :+:      :+:    :+:   */
+/*   get_string.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jbadaire <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: jbadaire <jbadaire@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/17 17:16:31 by jbadaire          #+#    #+#             */
-/*   Updated: 2023/01/17 17:17:26 by jbadaire         ###   ########lyon.fr   */
+/*   Created: 2023/09/06 18:47:16 by jbadaire          #+#    #+#             */
+/*   Updated: 2023/09/09 17:03:39 by jbadaire         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-#include "stdlib.h"
+#include "../headers/ft_printf.h"
 
-void	ft_lstdelone(t_list *lst, void (*del)(void *))
+int	ft_get_string(va_list param)
 {
-	del(lst->content);
-	free(lst);
+	char	*string;
+
+	string = va_arg(param, char *);
+    return (ft_putstr_fd(string, 1));
 }

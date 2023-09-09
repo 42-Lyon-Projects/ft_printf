@@ -1,29 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memchr.c                                        :+:      :+:    :+:   */
+/*   ft_tolower.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jbadaire <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/17 17:20:40 by jbadaire          #+#    #+#             */
-/*   Updated: 2023/01/17 17:42:55 by jbadaire         ###   ########lyon.fr   */
+/*   Created: 2022/11/24 14:28:27 by jbadaire          #+#    #+#             */
+/*   Updated: 2022/11/24 14:28:27 by jbadaire         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
-void	*ft_memchr(const void *s, int c, size_t n)
+int	ft_tolower(int c)
 {
-	unsigned char	*chars;
-	size_t			index;
-
-	chars = (unsigned char *) s;
-	index = 0;
-	while (index < n)
-	{
-		if (chars[index] == (unsigned char )c)
-			return (chars + index);
-		index++;
-	}
-	return (0);
+	if (c >= 65 && c <= 90)
+		return (c + 32);
+	return (c);
 }

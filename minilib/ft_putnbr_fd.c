@@ -6,14 +6,13 @@
 /*   By: jbadaire <jbadaire@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/24 14:30:42 by jbadaire          #+#    #+#             */
-/*   Updated: 2023/09/08 13:32:38 by jbadaire         ###   ########.fr       */
+/*   Updated: 2023/09/09 17:04:28 by jbadaire         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-#include "unistd.h"
+#include "../headers/ft_printf.h"
 
-void	ft_putnbr_fd(int n, int fd)
+int	ft_putnbr_fd(int n, int fd, int value)
 {
 	unsigned int	nb;
 	char			ch;
@@ -23,20 +22,24 @@ void	ft_putnbr_fd(int n, int fd)
 	{
 		nb = nb * -1;
 		write (fd, "-", 1);
+        value++;
 	}
 	if (nb <= 9)
 	{
 		ch = nb + '0';
 		write(fd, &ch, 1);
+        value++;
 	}
 	if (nb > 9)
 	{
-		ft_putnbr_fd(nb / 10, fd);
-		ft_putnbr_fd(nb % 10, fd);
+		ft_putnbr_fd(nb / 10, fd, value);
+		ft_putnbr_fd(nb % 10, fd, value);
 	}
+
+    return (value);
 }
 
-void	ft_put_unsigned_nbr_fd(unsigned int n, int fd)
+int	ft_put_unsigned_nbr_fd(unsigned int n, int fd, int value)
 {
 	unsigned int	nb;
 	char			ch;
@@ -46,10 +49,12 @@ void	ft_put_unsigned_nbr_fd(unsigned int n, int fd)
 	{
 		ch = nb + '0';
 		write(fd, &ch, 1);
+        value++;
 	}
 	if (nb > 9)
 	{
-		ft_putnbr_fd(nb / 10, fd);
-		ft_putnbr_fd(nb % 10, fd);
+        ft_put_unsigned_nbr_fd(nb / 10, fd, value);
+        ft_put_unsigned_nbr_fd(nb % 10, fd, value);
 	}
+    return (value);
 }

@@ -1,26 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   get_base16.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jbadaire <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: jbadaire <jbadaire@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/24 14:31:02 by jbadaire          #+#    #+#             */
-/*   Updated: 2022/11/24 14:31:55 by jbadaire         ###   ########.fr       */
+/*   Created: 2023/09/07 18:10:35 by jbadaire          #+#    #+#             */
+/*   Updated: 2023/09/08 14:18:00 by jbadaire         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../headers/ft_printf.h"
 
-void	*ft_memset(void *s, int c, size_t n)
+int	ft_get_base16(int is_upper, va_list param, char *base)
 {
-	size_t	index;
+	long unsigned int	number;
 
-	index = 1;
-	while (index <= n)
-	{
-		((char *) s)[index -1] = (char) c;
-		index++;
-	}
-	return (s);
+	number = va_arg(param, long unsigned int);
+    return (ft_base(number, 16, base, is_upper));
 }
+

@@ -6,7 +6,7 @@
 /*   By: jbadaire <jbadaire@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/07 17:10:55 by jbadaire          #+#    #+#             */
-/*   Updated: 2023/09/08 16:48:11 by jbadaire         ###   ########.fr       */
+/*   Updated: 2023/09/09 14:32:50 by jbadaire         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,18 +17,32 @@ int main() {
 
     void *test = malloc(sizeof (char) * (10));
 
-    ft_printf("Salut:\n"
-              " String 1: %s\n String 2: %s\n String 3: %s \n"
-              " Char 1: %c \n"
-              " Decimal 1 : %d\n"
-              " Entier 1 : %i\n"
-              " Hex MAJ: %X\n"
-              " HEX min %x\n"
-              " Unsigned int %u\n"
-              " Pourcent: %%\n"
-              " Pointeur: %p", "Hello World", "Test1", "Test2", 't', 42, 2242, 022434204, 022434204, 4294967294, test);
+    ft_printf("C1:%c:\n"
+              "C: 2%c:\n"
+              "C3: %c:\n"
+              "C4:%c:\n"
+              "C5 %c %c %c:\n"
+              "C6 %c %c %c:\n"
+              "C7 %c %c %c:\n"
+              "C8 %c %c %c:\n"
+              "C9 %c %c %c:\n"
+
+              , '0', '0', '0' - 256, '0' + 256, '0', 0, '1', ' ', ' ', ' ', '1', '2', '3', '2', '1', 0, 0, '1', 2);
 
     printf("\n====================\n");
+
+    printf("C1:%c:\n"
+              "C: 2%c:\n"
+              "C3: %c:\n"
+              "C4:%c:\n"
+              "C5 %c %c %c:\n"
+              "C6 %c %c %c:\n"
+              "C7 %c %c %c:\n"
+              "C8 %c %c %c:\n"
+              "C9 %c %c %c:\n"
+
+            , '0', '0', '0' - 256, '0' + 256, '0', 0, '1', ' ', ' ', ' ', '1', '2', '3', '2', '1', 0, 0, '1', 2);
+
     free(test);
     return 0;
 }

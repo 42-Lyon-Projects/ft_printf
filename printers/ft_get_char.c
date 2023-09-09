@@ -1,21 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_string.c                                       :+:      :+:    :+:   */
+/*   get_char.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jbadaire <jbadaire@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/06 18:47:16 by jbadaire          #+#    #+#             */
-/*   Updated: 2023/09/08 13:26:48 by jbadaire         ###   ########.fr       */
+/*   Updated: 2023/09/09 16:52:32 by jbadaire         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../headers/ft_printf.h"
 
-void	ft_get_string(va_list param)
+int	ft_get_char(va_list param)
 {
-	char	*string;
+	char	c;
 
-	string = va_arg(param, char *);
-	ft_putstr_fd(string, 1);
+	c = va_arg(param, int);
+	ft_putchar_fd(c, 1);
+
+    return (1);
 }

@@ -15,27 +15,33 @@
 int	ft_args_handler(char c, va_list params)
 {
     char *base_16;
+    int value;
     base_16 = (char [16])
             {
                     '0', '1', '2', '3', '4', '5', '6', '7',
                     '8', '9', 'A', 'B', 'C', 'D', 'E', 'F'
             };
+    value = 0;
 	if (c == 'c')
-		ft_get_char(params);
+		value = ft_get_char(params);
 	else if (c == 's')
-		ft_get_string(params);
+        value = ft_get_string(params);
 	else if (c == 'u')
-		ft_get_unsigned_integer(params);
+        value = ft_get_unsigned_integer(params);
 	else if (c == 'd' || c == 'i')
-		ft_get_integer(params);
+        value = ft_get_integer(params);
 	else if (c == 'x' || c == 'X')
-        ft_get_base16(c == 'X', params, base_16);
+        value = ft_get_base16(c == 'X', params, base_16);
 	else if (c == 'p')
-        ft_get_address(params, base_16);
-	else if (c == '%')
-		ft_putstr_fd("%", 1);
-	else
-		ft_putchar_fd(c, 1);
+        value = ft_get_address(params, base_16);
+	else if (c == '%'){
+        ft_putstr_fd("%", 1);
+        value++;
+    }
+	else {
+        ft_putchar_fd(c, 1);
+        value++;
+    }
 
-    return (0);
+    return (value);
 }
