@@ -22,7 +22,7 @@ _BOLD = \033[1m
 
 OS = $(shell uname | cat)
 
-NAME = printf.a
+NAME = libftprintf.a
 CFLAGS = -Wall -Wextra -Werror
 RM = @rm -rf
 CC = @gcc
@@ -33,7 +33,7 @@ LIBFT = libft/libft.a
 MAKE_LIBFT = @make -C libft
 CLEAN_LIBFT = @make clean -C libft
 FCLEAN_LIBFT = @make fclean -C libft
-FILES = ft_printf main args_handler ./printers/get_address ./printers/get_base16 ./printers/get_char ./printers/get_integer ./printers/get_string
+FILES =main ft_printf args_handler ./printers/get_address ./printers/get_base16 ./printers/get_char ./printers/get_integer ./printers/get_string
 SRCS = $(addsuffix .c, $(FILES)))
 OBJS = $(addsuffix .o, $(addprefix objects/, $(FILES)))
 
