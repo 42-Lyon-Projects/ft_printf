@@ -6,7 +6,7 @@
 /*   By: jbadaire <jbadaire@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/06 18:47:16 by jbadaire          #+#    #+#             */
-/*   Updated: 2023/09/09 16:52:32 by jbadaire         ###   ########.fr       */
+/*   Updated: 2023/09/12 13:56:35 by jbadaire         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,5 @@ int	ft_get_char(va_list param)
 	char	c;
 
 	c = va_arg(param, int);
-	ft_putchar_fd(c, 1);
-
-    return (1);
+	return (ft_putchar_fd(c, 1));
 }

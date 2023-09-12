@@ -3,7 +3,7 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: jbadaire <marvin@42.fr>                    +#+  +:+       +#+         #
+#    By: jbadaire <jbadaire@student.42lyon.fr>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/01/17 17:54:42 by jbadaire          #+#    #+#              #
 #    Updated: 2023/01/17 17:54:46 by jbadaire         ###   ########lyon.fr    #
@@ -26,7 +26,6 @@ SRCS =  ft_printf.c \
 		minilib/ft_putchar_fd.c \
 		minilib/ft_putnbr_fd.c \
 		minilib/ft_putstr_fd.c \
-		minilib/ft_tolower.c
 
 
 SURPL_O = 	ft_printf.o \
@@ -37,11 +36,10 @@ SURPL_O = 	ft_printf.o \
             ft_get_char.o \
             ft_get_integer.o \
             ft_get_string.o \
-            ft_base.c \
-            ft_putchar_fd.c \
-            ft_putnbr_fd.c \
-            ft_putstr_fd.c \
-            ft_tolower.c
+            ft_base.o \
+            ft_putchar_fd.o \
+            ft_putnbr_fd.o \
+            ft_putstr_fd.o \
 
 
 CC = gcc
@@ -54,7 +52,7 @@ OBJS = $(SRCS:.c=.o)
 
 $(NAME): $(OBJS)
 	$(CC) $(FLAGS) $(SRCS)
-	ar rcs $(NAME) $(OBJS)
+	ar rc $(NAME) $(OBJS)
 
 all : $(NAME)
 

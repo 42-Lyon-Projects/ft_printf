@@ -6,55 +6,57 @@
 /*   By: jbadaire <jbadaire@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/24 14:30:42 by jbadaire          #+#    #+#             */
-/*   Updated: 2023/09/09 17:04:28 by jbadaire         ###   ########.fr       */
+/*   Updated: 2023/09/12 14:49:52 by jbadaire         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../headers/ft_printf.h"
 
-int	ft_putnbr_fd(int n, int fd, int value)
+int	ft_putnbr_fd(int n, int fd)
 {
 	unsigned int	nb;
 	char			ch;
+	int				value;
 
+	value = 0;
 	nb = (unsigned int)n;
 	if (n < 0)
 	{
 		nb = nb * -1;
-		write (fd, "-", 1);
-        value++;
+		value += write (fd, "-", 1);
 	}
 	if (nb <= 9)
 	{
 		ch = nb + '0';
-		write(fd, &ch, 1);
-        value++;
+		value += write(fd, &ch, 1);
 	}
 	if (nb > 9)
 	{
-		ft_putnbr_fd(nb / 10, fd, value);
-		ft_putnbr_fd(nb % 10, fd, value);
+		value += ft_putnbr_fd(nb / 10, fd);
+		value += ft_putnbr_fd(nb % 10, fd);
 	}
-
-    return (value);
+	return (value);
 }
 
-int	ft_put_unsigned_nbr_fd(unsigned int n, int fd, int value)
+int	ft_put_unsigned_nbr_fd(unsigned int n, int fd)
 {
 	unsigned int	nb;
 	char			ch;
+	int				value;
 
 	nb = n;
+	ch = 0;
+	value = 0;
 	if (nb <= 9)
 	{
 		ch = nb + '0';
-		write(fd, &ch, 1);
-        value++;
+		value = write(fd, &ch, 1);
 	}
 	if (nb > 9)
 	{
-        ft_put_unsigned_nbr_fd(nb / 10, fd, value);
-        ft_put_unsigned_nbr_fd(nb % 10, fd, value);
+		value = 0;
+		value += ft_put_unsigned_nbr_fd(nb / 10, fd);
+		value += ft_put_unsigned_nbr_fd(nb % 10, fd);
 	}
-    return (value);
+	return (value);
 }
