@@ -6,12 +6,11 @@
 /*   By: jbadaire <jbadaire@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/06 18:39:32 by jbadaire          #+#    #+#             */
-/*   Updated: 2023/09/12 14:52:32 by jbadaire         ###   ########.fr       */
+/*   Updated: 2023/09/18 08:23:56 by jbadaire         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "headers/ft_printf.h"
-#include <stdlib.h>
 
 int	ft_args_handler(char c, va_list params)
 {

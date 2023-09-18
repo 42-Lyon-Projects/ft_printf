@@ -6,13 +6,13 @@
 /*   By: jbadaire <jbadaire@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/08 16:26:56 by jbadaire          #+#    #+#             */
-/*   Updated: 2023/09/12 14:45:25 by jbadaire         ###   ########.fr       */
+/*   Updated: 2023/09/18 08:54:33 by jbadaire         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../headers/ft_printf.h"
 
-int	ft_base(unsigned int number, int base_number, char base_array[], int value)
+int	ft_base(unsigned long number, int base_number, char base_array[], int value)
 {
 	char	character;
 

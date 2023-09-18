@@ -6,7 +6,7 @@
 /*   By: jbadaire <jbadaire@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/07 11:43:12 by jbadaire          #+#    #+#             */
-/*   Updated: 2023/09/12 14:24:36 by jbadaire         ###   ########.fr       */
+/*   Updated: 2023/09/18 08:57:43 by jbadaire         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,6 @@ int		ft_putnbr_fd(int n, int fd);
 int		ft_put_unsigned_nbr_fd(unsigned int n, int fd);
 int		ft_putchar_fd(char c, int fd);
 int		ft_putstr_fd(char *s, int fd);
-int		ft_base(unsigned int number, int b_number, char b_array[], int value);
-
+int		ft_base(unsigned long number, int b_number, char b_array[], int value);
 
 #endif
